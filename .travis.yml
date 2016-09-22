@@ -1,0 +1,11 @@
+language: cpp
+compiler: g++
+
+addons:
+  apt:
+    packages:
+    - openmpi-bin
+    - libopenmpi-dev
+
+script:
+- mkdir -p build && cd build && cmake .. && make && ctest --output-on-failure
