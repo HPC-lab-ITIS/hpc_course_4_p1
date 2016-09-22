@@ -6,11 +6,18 @@ endif()
 
 project(test1)
 
-
+#----------------------------------------------------------------------------
+# Find MPI and OpenMP
+#----------------------------------------------------------------------------
 find_package(OpenMP)
 find_package(MPI QUIET)
 
 include_directories(${MPI_CXX_INCLUDE_PATH})
+
+#----------------------------------------------------------------------------
+# Enable C++11 support
+#----------------------------------------------------------------------------
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 
 enable_testing()
 
