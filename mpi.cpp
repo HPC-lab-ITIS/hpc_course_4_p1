@@ -16,8 +16,9 @@ int main (int argc, char ** argv)
 
     for(auto i = 0; i < n; ++i)
         unsort[i] = uni(rng);
-    
+
     std::sort(unsort.begin(), unsort.end());
 
-    return 0;
+    // Test correctness
+    return std::is_sorted(unsort.begin(), unsort.end()) ? 0 : 1;
 }
